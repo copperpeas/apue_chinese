@@ -1,0 +1,13 @@
+#Chapter 15 Interprocess Communication
+
+##15.2 Pipes
+Pipes是最古老的UNIX System IPC方式。
+所有的UNIX系统都支持它。
+Pipes有两个限制：
+1.历史上的Pipes仅仅实现了半双工工作方式（即数据只向一个方向流动）。
+  一些系统现在支持全双工pipes,但为了最大可能的可移植性，我们绝对不能假设情况就是这样的。
+2.Pipes仅可用在有共同祖先的进程之间，一般的，一个pipe是被进程创建的：进程调用fork函数,
+  pipe用在父进程和子进程之间。
+
+FIFOS绕过了第二个限制，UNIX domain sockets绕过了上面的两个限制。
+
